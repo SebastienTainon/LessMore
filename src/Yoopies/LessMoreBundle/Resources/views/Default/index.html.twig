@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>LessMore App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+    <div class="container" id="less-more-app">
+        <div class="jumbotron">
+            <h1>LessMore App</h1>
+        </div>
+
+        <form v-on:submit.prevent="play()">
+            <div class="form-group text-center">
+                <span class="btn-wrapper left">
+                    <button class="btn btn-default" v-on:click.prevent="less()">-</button>
+                </span>
+
+                <span class="input-wrapper" style="display: inline-block">
+                    <input type="number" name="number-choice" min="1" max="100" v-model="form.choiceNumber" class="form-control">
+                </span>
+
+                <span class="btn-wrapper right">
+                    <button class="btn btn-default" v-on:click.prevent="more()">+</button>
+                </span>
+
+                <button class="btn btn-primary" type="submit">Jouer</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{{ asset('assets/javascripts/libs/vue.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.2.0/vue-resource.min.js"></script>
+    <script src="{{ asset('assets/javascripts/app/app.js') }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
